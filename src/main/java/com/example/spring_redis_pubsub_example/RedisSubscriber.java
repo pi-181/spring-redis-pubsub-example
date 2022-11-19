@@ -17,8 +17,8 @@ public class RedisSubscriber {
      * @param message content of a message from Redis pub/sub channel
      */
     @SuppressWarnings("unused")
-    public void receiveMessage(String message) {
+    public void receiveMessage(String message, String channel) {
         int total = counter.incrementAndGet();
-        log.info("Received message (total: {}): {}", total, message);
+        log.info("Received message from channel \"{}\" (total: {}): {}", channel, total, message);
     }
 }
